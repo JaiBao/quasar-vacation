@@ -17,16 +17,6 @@ const routes = [
           admin: false
         }
       },
-      {
-        path: 'intro',
-        name: 'intro',
-        component: () => import('src/pages/main/IntroPage.vue'),
-        meta: {
-          title: '',
-          login: false,
-          admin: false
-        }
-      },
 
       {
         path: '/login',
