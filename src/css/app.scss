@@ -1,0 +1,42 @@
+// app global css in SCSS form
+body{
+font-family: 'Roboto';
+cursor: url('~assets/favicon-16x16.png'), auto;
+
+}
+h3 {
+  border-left: 5px solid $primary;
+  padding-left: 2rem;
+  margin-left: 1rem;
+}
+h5{
+color: $accent;
+}
+.flex-break {
+  flex: 1 0 100% !important;
+}
+.row {
+  .flex-break {
+    height: 0 !important;
+  }
+}
+.column {
+  .flex-break {
+    width: 0 !important;
+  }
+}
+
+h6{
+margin-right: 1.5rem;
+
+}
+
+#footer{
+  border-top: 5px solid $secondary;
+  background-color: $secondary;
+  text-align: center;
+  .q-btn{
+  position: relative;
+  left:-1%
+  };
+  }
