@@ -109,7 +109,7 @@ const columns = [
   {
     name: 'account',
     align: 'left',
-    label: '姓名',
+    label: '帳號',
     field: 'account',
     sortable: true
   },
