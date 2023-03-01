@@ -5,7 +5,7 @@
       <template v-slot:after>
         <div class="table-container">
           <q-table class="table"
-            title="請假明細"
+            title="請假人員"
             :rows="leaves"
             :columns="columns"
             row-key="startDate"
@@ -18,6 +18,12 @@
                 </template>
               </q-input>
             </template>
+            <template v-slot:body-cell-image="props">
+        <q-td :props="props">
+          <q-avatar>
+<q-img :src="`https://source.boringavatars.com/beam/${props.row.name}?colors=058789,503d2e,d54b1a,e3a72f,f0ecc9`"/></q-avatar>
+        </q-td>
+      </template>
           </q-table>
         </div>
       </template>
@@ -25,6 +31,7 @@
       <template v-slot:before>
         <div class="q-ma-xl seeit" >
           <q-date
+          id="userdate"
             v-model="filter"
             :events="events"
             event-color="red"
@@ -48,6 +55,11 @@ const filter = ref('')
 
 const leaves = reactive([])
 const columns = [
+  {
+    name: 'image',
+    label: '頭貼',
+    align: 'center'
+  },
   {
     name: '姓名',
     field: 'name',
@@ -94,9 +106,6 @@ getme()
 </script >
 
 <style lang="scss">
-.q-date{
-  width: 1000px;
-}
 
 .container {
   height: 450px;
@@ -113,8 +122,9 @@ getme()
 }
 .table{
 width: 75%;
+height: 300PX;
 margin: auto;
-margin-top: 32px;
+margin-top: 20px;
 }
 
 #q-app
@@ -129,7 +139,7 @@ margin-top: 32px;
   width: 100%  !important;
 }
 }}}}}
-.q-date{
+#userdate{
   margin-left: 35%;
   width: 100%;
 
@@ -138,11 +148,27 @@ margin-top: 32px;
   width: 1000px;
 }
 @media screen and (max-width: 768px) {
-  .q-table{
+  .table{
     width: 100%;
     margin-left: 0;
   }
-  .q-date {
+  #userdate {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .seeit {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .table{
+    width: 100%;
+    margin-left: 0;
+    height: 100%;
+  }
+  #userdate {
     width: 100%;
     margin-left: 0;
   }

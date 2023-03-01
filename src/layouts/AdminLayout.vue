@@ -8,10 +8,10 @@
         <q-toolbar-title>
           <q-btn flat  to="/" size="lg" style="font-size:20px"
           class="gt-xs">出缺勤管理系統雲
-            <img src="src/assets/A(60).png" style="width:80px;height: 80px;" >
+            <img src="~/assets/A(60).png" style="width:80px;height: 80px;" >
             </q-btn>
 
-            <q-span class="gt-xs">
+            <q-span >
               歡迎{{user.name}}
             </q-span>
         </q-toolbar-title>
@@ -143,7 +143,7 @@ const menuList = [
   },
   {
     icon: 'manage_history',
-    label: '假單管理',
+    label: '假單歷史紀錄',
     separator: false,
     a: '/admin/limit'
   },

@@ -7,7 +7,7 @@
 
         <q-toolbar-title>
           <q-btn flat  to="/" size="lg" style="font-size:20px" class="gt-xs" >出缺勤管理系統雲
-            <img src="src/assets/A(60).png" style="width:80px;height: 80px;"> </q-btn>
+            <img src="~/assets/A(60).png" style="width:80px;height: 80px;"> </q-btn>
             <q-span>歡迎{{user.name}}的使用</q-span>
           </q-toolbar-title>
         <q-spacer>
@@ -59,7 +59,7 @@
     </q-page-container>
     <q-footer bordered class="bg-primary text-white lt-md">
       <q-toolbar>
-        <q-toolbar-title>
+        <q-toolbar-title class="justify-center">
 
          <div id="days" class="lt-md"> {{date}}</div>
         <div id="times" class="lt-md">現在時間: {{ time }}</div>

@@ -6,8 +6,9 @@
 
             <!-- <q-icon name="update" size="40px"/> -->
 
-          <q-btn flat  to="/" size="lg" style="font-size:30px" >
-            <img src="src/assets/A(60).png" style="width:120px;height: 120px;" class="gt-xs">出缺勤管理系統雲 </q-btn>
+          <q-btn flat  to="/" size="lg"  id="cloud" >
+            <img src="~/assets/A(60).png"
+            v-if="isLogin">出缺勤管理系統雲 </q-btn>
         </q-toolbar-title>
 
         <q-btn
@@ -136,14 +137,14 @@ v-if="isAdmin"
   v-ripple
   :active="link === 'trash'"
   @click="link = 'trash'"
-  to="/admin/article"
+  to="/admin/limit"
   active-class="my-menu-link"
 >
   <q-item-section avatar>
     <q-icon name="manage_history" />
   </q-item-section>
 
-  <q-item-section>假單管理</q-item-section>
+  <q-item-section>假單歷史紀錄</q-item-section>
 </q-item>
 <!-- ---------------------------------------------------------- -->
 <q-item
@@ -163,20 +164,6 @@ v-if="isAdmin"
 </q-item>
 <!-- ---------------------------------------------------------- -->
 <q-separator spaced />
-
-<q-item
-  clickable
-  v-ripple
-  :active="link === 'settings'"
-  @click="link = 'settings'"
-  active-class="my-menu-link"
->
-  <q-item-section avatar>
-    <q-icon name="settings" />
-  </q-item-section>
-
-  <q-item-section>Settings</q-item-section>
-</q-item>
 
 <q-item
 v-if="isLogin"
@@ -213,7 +200,7 @@ v-if="isLogin"
 </div>
 <div class="q-img q-img--menu absolute-top" role="img" style="height: 204px;"><div style="padding-bottom: 82.5195%;"></div>
 <div class="q-img__container absolute-full">
-  <img class="q-img__image q-img__image--with-transition q-img__image--loaded" loading="lazy" fetchpriority="auto" aria-hidden="true" draggable="false" src="https://cdn.quasar.dev/img/material.png" style="object-fit: cover; object-position: 50% 50%;">
+  <img class="q-img__image q-img__image--with-transition q-img__image--loaded" loading="lazy" fetchpriority="auto" aria-hidden="true" draggable="false" src="https://cdn.quasar.dev/img/material.png" style="object-fit: cover; object-position: 50% 50%;" >
 </div>
 <div class="q-img__content absolute-full q-anchor--skip" >
   <div class="absolute-bottom bg-transparent" style="display: flex;
@@ -266,8 +253,28 @@ const logout = async () => {
 }
 </script>
 
-<style >
+<style lang="scss">
 .q-toolbar {
   height: 7vh;
+}
+
+#cloud{
+  font-size: 30px !important;
+img{
+  width: 120px;
+  height: 120px;
+}
+
+}
+@media screen and (max-width: 768px) {
+#cloud{
+width: 100%;
+font-size: 25px !important;
+img{
+width: 80px;
+height: 80px;
+}
+
+}
 }
 </style>

@@ -5,7 +5,7 @@
       <template v-slot:after>
         <div class="table-container">
           <q-table class="table"
-            title="請假明細"
+            title="請假人員"
             :rows="leaves"
             :columns="columns"
             row-key="startDate"

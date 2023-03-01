@@ -1,7 +1,7 @@
 <template>
 
 <div class="q-pa-md text-right">
-    <q-table
+    <q-table class="table"
       title="會員管理"
       :rows="rows"
       :columns="columns"
@@ -178,3 +178,35 @@ const edit = async () => {
 }
 
 </script>
+<style lang="scss">
+
+.container {
+  height: 450px;
+}
+
+.table-container {
+  height: 100%;
+}
+.table{
+width: 75%;
+height: 300PX;
+margin: auto;
+margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .table{
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+@media screen and (max-width: 992px) {
+  .table{
+    width: 100%;
+    margin-left: 0;
+    height: 100%;
+  }
+
+}
+</style>

@@ -18,6 +18,7 @@
             label="內容"
             required
           class="content"
+          type="textarea"
           />
           <q-input
           type="date"
@@ -235,5 +236,8 @@ const deleteBulletin = async () => {
 <style>
 #content{
   height: 200px;
+}
+.q-input{
+
 }
 </style>

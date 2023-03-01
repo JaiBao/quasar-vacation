@@ -1,17 +1,22 @@
 <template>
-  <div class="q-pa-md ">
-    <div class="row ">
+  <div class="q-pa-md  ">
+    <div class="row  ">
       <!-- <iframe width="2000" height="600" src="https://www.youtube.com/embed/xQabajpFq1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
     <q-parallax
+    id="homeparallax"
       src="~/assets/rest.jpg"
     >
-    <h1 class="text-white">Basic</h1>
+    <!-- <h1 class="text-white">Basic</h1> -->
+    <!-- <img src="~/assets/A(60).png" style="width: 150px; height: 150px" > -->
+          <div class="text-h3 text-white text-center">Wish you a happy holiday！</div>
+
   </q-parallax>
 
     </div>
   </div>
-  <section style="display: flex; flex-direction: row; height: 100%">
-  <div style="flex-grow: 1;">
+
+    <div class="row belltin">
+  <div  style="flex-grow: 1;">
     <q-table
       title="最新消息"
       :rows="bulletins"
@@ -20,10 +25,10 @@
       style="height: 100%;"
     />
   </div>
-  <div style="flex-grow: 2;">
-  <q-row class="q-mt-xs" style="height: 100%;">
+  <div style="flex-grow: 1;" class="video">
+  <q-row class="q-mt-xs " style="height: 100%;" >
 
-    <q-carousel animated v-model="slide" arrows navigation infinite style="height: 100%;">
+    <q-carousel animated v-model="slide"  arrows navigation infinite style="height: 100%;" >
       <q-carousel-slide
       :name="1"
 
@@ -51,10 +56,10 @@
     </q-carousel>
   </q-row>
 </div>
-</section>
+</div>
 
     <div id="info" class="row q-mb-md text-center justify-center items-center">
-      <div class="col-md-3 ">
+      <div class="col-md-3 col-xs-12 ">
         <q-card class="my-card" flat bordered>
           <q-card-section>
             <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
@@ -68,7 +73,7 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-md-3 ">
+      <div class="col-md-3 col-xs-12 ">
         <q-card class="my-card" flat bordered>
           <q-card-section>
             <a href="https://labweb.mol.gov.tw/monthly/index.html#disasterSet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidaySet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&monthlyPay=36000&regularDayOffWorkReason=disaster&restDayOffWorkReason=restLaborAgree&specialDayOffWorkReason=specialLaborAgree&workhours=8%2C8%2C8%2C8%2C8%2C0%2C0">
@@ -83,7 +88,7 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-md-3 ">
+      <div class="col-md-3 col-xs-12 ">
         <q-card class="my-card" flat bordered>
           <q-card-section>
             <a href="https://www.mol.gov.tw/1607/28162/28166/28218/nodelist">
@@ -97,7 +102,7 @@
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-xs-12">
   <q-card class="my-card" flat bordered>
     <q-card-section>
       <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
@@ -218,4 +223,53 @@ section {
 .shrink-text {
   font-size: 1.3rem; /* set your desired font size */
 }
+.belltin{
+  display: flex; flex-direction: row; height: 100%
+}
+
+@media screen and (max-width: 768px) {
+  #homeparallax{
+    background-position: right;
+
+  }
+  .q-parallax__media > img{
+    left: -50%!important;
+  }
+  .q-parallax__content .text-h3{
+    font-size: 28px!important;
+  }
+  .belltin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  .video{
+      height: 50vh;
+    }
+
+  }
+  #info{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .my-card{
+    width: 95%;
+  }
+}
+// @media screen and (max-width: 992px) {
+//   .table{
+//     width: 100%;
+//     margin-left: 0;
+//     height: 100%;
+//   }
+//   .q-date {
+//     width: 100%;
+//     margin-left: 0;
+//   }
+
+//   .seeit {
+//     width: 100%;
+//     margin-left: 0;
+//   }
+// }
 </style>

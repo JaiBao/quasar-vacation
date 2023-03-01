@@ -2,12 +2,21 @@
   <q-page>
 
         <q-table id="table"
-      title="請假明細"
+      title="假單歷史紀錄"
       :rows="leaves"
       :columns="columns"
       row-key="name"
 
     />
+    <div class="row justify-end q-ma-lg myMOUSE">
+    <q-btn
+    icon="upload_file"
+      color="green"
+    label="匯出excel"
+    @click="exportToExcel"/>
+
+  </div>
+
   </q-page>
 
   <!-- ------------------------------- -->
@@ -19,6 +28,7 @@ import { ref, reactive } from 'vue'
 import { useQuasar } from 'quasar'
 import { apiAuth } from 'src/boot/axios'
 import { useUserStore } from 'src/stores/user'
+import ExcelJS from 'exceljs'
 
 export default {
   setup () {
@@ -34,12 +44,7 @@ export default {
     const leaves = reactive([])
     const selected = ref([])
     const columns = [
-      {
-        name: 'id',
-        field: 'id',
-        label: 'id',
-        align: 'center'
-      },
+
       {
         name: '姓名',
         field: 'name',
@@ -62,9 +67,9 @@ export default {
         label: '結束日期'
       },
       {
-        name: '狀態',
+        name: '審核結果',
         field: 'state',
-        label: '狀態',
+        label: '審核結果',
         sortable: true
       }
     ]
@@ -88,6 +93,7 @@ export default {
         console.log(error)
       }
     }
+
     getme()
     const $q = useQuasar()
     const submitForm = async () => {
@@ -119,6 +125,44 @@ export default {
         })
       }
     }
+    const exportToExcel = () => {
+      const workbook = new ExcelJS.Workbook()
+      const worksheet = workbook.addWorksheet('假單歷史紀錄')
+
+      // Define the table headers
+      const headers = columns.map((column) => column.label)
+      worksheet.addRow(headers)
+
+      // Add the table data
+      leaves.forEach((leave) => {
+        worksheet.addRow([
+
+          leave.name,
+          leave.leaveType,
+          leave.startDate,
+          leave.endDate,
+          leave.state
+        ])
+      })
+
+      // Set column widths
+      worksheet.columns.forEach((column) => {
+        column.width = 15
+      })
+
+      // Generate the Excel file
+      workbook.xlsx.writeBuffer().then((buffer) => {
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'history.xlsx'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+        window.URL.revokeObjectURL(url)
+      })
+    }
 
     return {
       name,
@@ -130,10 +174,12 @@ export default {
       columns,
       submitForm,
       selected,
-      id
+      id,
+      exportToExcel
     }
   }
 }
+
 </script>
 
 <style lang="scss">
@@ -148,4 +194,10 @@ margin: auto;
 margin-top: 32px;
 }
 
+.myMOUSE {
+
+width: 75%;
+margin: auto;
+margin-top: 32px;
+}
 </style>

@@ -1,7 +1,7 @@
 <template class="myMOUSE">
 
     <div class="q-pa-md text-right myMOUSE ">
-      <q-table id="table"
+      <q-table id="reviewtable"
       title="待審核假單"
       :rows="leaves"
       :columns="columns"
@@ -27,7 +27,7 @@
   </div>
 
   <div class="q-pa-md text-right myMOUSE" >
-    <q-table id="table"
+    <q-table id="reviewtable"
       title="已審核假單"
       :rows="leaves2"
       :columns="columns2"
@@ -265,7 +265,7 @@ export default {
 // }
 
 .myMOUSE {
-    cursor: url(src/assets/休假2.png);
+
     width: 75%;
     margin: auto;
 margin-top: 32px;
