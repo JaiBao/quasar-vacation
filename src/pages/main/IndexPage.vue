@@ -245,6 +245,7 @@ section {
     width: 100%;
   .video{
       height: 50vh;
+      max-width: 75%;
     }
     .bulletintable{
       max-width: 75%;
