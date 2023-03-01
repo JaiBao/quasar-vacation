@@ -18,6 +18,7 @@
     <div class="row belltin">
   <div  style="flex-grow: 1;">
     <q-table
+    class="bulletintable"
       title="最新消息"
       :rows="bulletins"
       :columns="columns"
@@ -244,6 +245,9 @@ section {
     width: 100%;
   .video{
       height: 50vh;
+    }
+    .bulletintable{
+      max-width: 75%;
     }
 
   }
