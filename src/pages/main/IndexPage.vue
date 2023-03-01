@@ -229,10 +229,7 @@ section {
 }
 
 @media screen and (max-width: 768px) {
-  #homeparallax{
-    background-position: right;
 
-  }
   .q-parallax__media > img{
     left: -50%!important;
   }
@@ -245,10 +242,10 @@ section {
     width: 100%;
   .video{
       height: 50vh;
-      max-width: 75%;
+      max-width: 95%;
     }
     .bulletintable{
-      max-width: 75%;
+      max-width: 72%;
     }
 
   }
