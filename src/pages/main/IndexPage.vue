@@ -1,5 +1,6 @@
 <template>
-  <div class="q-pa-md  ">
+  <section>
+ <div class="q-px-md q-pb-md  ">
     <div class="row  ">
       <!-- <iframe width="2000" height="600" src="https://www.youtube.com/embed/xQabajpFq1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
     <q-parallax
@@ -11,11 +12,10 @@
           <div class="text-h3 text-white text-center">Wish you a happy holiday！</div>
 
   </q-parallax>
-
-    </div>
+</div>
   </div>
 
-    <div class="row belltin">
+    <div class="row belltin q-px-md">
   <div  style="flex-grow: 1;">
     <q-table
     class="bulletintable"
@@ -118,13 +118,18 @@
   </q-card>
 </div>
     </div>
+    </section>
 
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue'
 import { api } from 'src/boot/axios'
-import { useQuasar } from 'quasar'
+import {
+  useQuasar,
+  Loading,
+  QSpinnerIos
+} from 'quasar'
 
 const slide = ref(1)
 const $q = useQuasar()
@@ -139,6 +144,11 @@ const bulletins = reactive([])
 
 const getBulletins = async () => {
   try {
+    Loading.show({
+      spinner: QSpinnerIos,
+      message: '想休假嗎？再等等...',
+      messageColor: 'white'
+    })
     const data = await api.get('/bulletin')
     console.log(data)
     let i = 0
@@ -153,6 +163,7 @@ const getBulletins = async () => {
         })
       }
     }
+    Loading.hide()
   } catch (error) {
     $q.notify({
       color: 'red-4',
@@ -196,7 +207,7 @@ q-parallax{
 }
 section {
   background: #eee;
-  // width: 100vw;
+  width: 100vw;
   // padding: 20px 10px;
 }
 // .q-table__container {
@@ -229,7 +240,9 @@ section {
 }
 
 @media screen and (max-width: 768px) {
-
+#homeparallax{
+  max-width: 100%;
+}
   .q-parallax__media > img{
     left: -50%!important;
   }
@@ -240,12 +253,15 @@ section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 24px;
   .video{
       height: 50vh;
-      max-width: 95%;
+      max-width: 100%;
     }
     .bulletintable{
-      max-width: 72%;
+      max-width: 70%;
+      margin-bottom: 24px;
+
     }
 
   }
@@ -256,6 +272,9 @@ section {
   }
   .my-card{
     width: 95%;
+    margin: auto;
+    margin-bottom: 16px;
+    border-radius: 10px;
   }
 }
 // @media screen and (max-width: 992px) {
