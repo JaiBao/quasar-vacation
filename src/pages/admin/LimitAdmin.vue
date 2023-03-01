@@ -152,11 +152,14 @@ export default {
 
       // Generate the Excel file
       workbook.xlsx.writeBuffer().then((buffer) => {
+        const today = new Date()
+        const dateString = today.getFullYear() + '-' + (today.getMonth() + 1).toString().padStart(2, '0') + '-' + today.getDate().toString().padStart(2, '0')
+        const fileName = `history_${dateString}.xlsx`
         const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
         const url = window.URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
-        a.download = 'history.xlsx'
+        a.download = fileName
         document.body.appendChild(a)
         a.click()
         document.body.removeChild(a)
