@@ -8,6 +8,7 @@
       row-key="id"
       selection="single"
       v-model:selected="selected"
+       :filter="filter"
     >
     <template v-slot:body-cell-image="props">
         <q-td :props="props">
@@ -89,6 +90,7 @@ const $q = useQuasar()
 // const user = useUserStore()
 const selected = ref([])
 const UserEdit = ref(false)
+const filter = ref('')
 
 const columns = [
   {
