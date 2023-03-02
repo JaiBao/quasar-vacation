@@ -7,8 +7,8 @@
 
         <q-toolbar-title>
           <q-btn flat  to="/" size="lg" style="font-size:20px"
-          class="gt-xs">出缺勤管理系統雲
-            <img src="~/assets/A(60).png" style="width:70px;height: 70px;" >
+          class="gt-xs">
+          <img src="~/assets/A(60).png" style="width:55px;height: 55px;" >出缺勤管理系統雲
             </q-btn>
 
             <q-span >

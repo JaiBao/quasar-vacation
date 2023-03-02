@@ -66,7 +66,7 @@
         <q-card class="my-card" flat bordered>
           <q-card-section
           data-aos="flip-left"
-          data-aos-duration="2000"
+          data-aos-duration="3000"
           >
             <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
         <q-img ratio="1" class="col-5" src="~/assets/勞保.jpg" />
@@ -82,7 +82,7 @@
       <div class="col-md-3 col-xs-12 ">
         <q-card class="my-card" flat bordered>
           <q-card-section
-          data-aos="flip-right"
+          data-aos="flip-left"
           data-aos-duration="3000">
             <a href="https://labweb.mol.gov.tw/monthly/index.html#disasterSet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidaySet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&monthlyPay=36000&regularDayOffWorkReason=disaster&restDayOffWorkReason=restLaborAgree&specialDayOffWorkReason=specialLaborAgree&workhours=8%2C8%2C8%2C8%2C8%2C0%2C0">
         <q-img ratio="1" class="col-5" src="~/assets/加班費.jpg" />
@@ -115,7 +115,7 @@
       <div class="col-md-3 col-xs-12">
   <q-card class="my-card" flat bordered>
     <q-card-section
-    data-aos="flip-right"
+    data-aos="flip-left"
           data-aos-duration="3000">
       <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
         <q-img ratio="1" class="col-5" src="~/assets/勞保.png" />
