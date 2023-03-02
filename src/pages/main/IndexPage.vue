@@ -141,9 +141,9 @@ import {
   Loading,
   QSpinnerIos
 } from 'quasar'
-
+import AOS from 'aos'
 import 'aos/dist/aos.css'
-
+AOS.init()
 
 const slide = ref(1)
 const $q = useQuasar()
