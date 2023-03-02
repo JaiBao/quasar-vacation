@@ -11,7 +11,9 @@
     <!-- <img src="~/assets/A(60).png" style="width: 150px; height: 150px" > -->
           <div class="text-h3 text-white text-center"
                data-aos="fade-up"
-              data-aos-duration="3000">Wish you a Happy Holiday！</div>
+              data-aos-duration="3000"
+              data-aos-anchor-placement="top-center"
+              data-aos-once ="false">Wish you a Happy Holiday！</div>
 
   </q-parallax>
 </div>
@@ -66,7 +68,9 @@
         <q-card class="my-card" flat bordered>
           <q-card-section
           data-aos="flip-left"
-          data-aos-duration="3000"
+          data-aos-duration="1000"
+          data-aos-anchor-placement="center-bottom"
+          data-aos-once ="false"
           >
             <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
         <q-img ratio="1" class="col-5" src="~/assets/勞保.jpg" />
@@ -83,7 +87,9 @@
         <q-card class="my-card" flat bordered>
           <q-card-section
           data-aos="flip-left"
-          data-aos-duration="3000">
+          data-aos-duration="1000"
+          data-aos-anchor-placement="center-bottom"
+          >
             <a href="https://labweb.mol.gov.tw/monthly/index.html#disasterSet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidaySet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&monthlyPay=36000&regularDayOffWorkReason=disaster&restDayOffWorkReason=restLaborAgree&specialDayOffWorkReason=specialLaborAgree&workhours=8%2C8%2C8%2C8%2C8%2C0%2C0">
         <q-img ratio="1" class="col-5" src="~/assets/加班費.jpg" />
       </a>
@@ -100,7 +106,9 @@
         <q-card class="my-card" flat bordered>
           <q-card-section
           data-aos="flip-left"
-          data-aos-duration="3000">
+          data-aos-duration="1000"
+          data-aos-anchor-placement="center-bottom"
+          >
             <a href="https://www.mol.gov.tw/1607/28162/28166/28218/nodelist">
         <q-img ratio="1" class="col-5" src="~/assets/規定.jpg" />
       </a>
@@ -116,7 +124,9 @@
   <q-card class="my-card" flat bordered>
     <q-card-section
     data-aos="flip-left"
-          data-aos-duration="3000">
+          data-aos-duration="1000"
+          data-aos-anchor-placement="center-bottom"
+        >
       <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
         <q-img ratio="1" class="col-5" src="~/assets/勞保.png" />
       </a>
@@ -290,6 +300,7 @@ section {
     margin: auto;
     margin-bottom: 16px;
     border-radius: 10px;
+
   }
 }
 // @media screen and (max-width: 992px) {
