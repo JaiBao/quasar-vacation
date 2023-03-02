@@ -209,6 +209,7 @@ q-parallax{
   // }
   max-width: 100vw;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 #info2 {
   min-height: 40vh;
