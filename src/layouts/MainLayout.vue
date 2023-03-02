@@ -6,7 +6,7 @@
 
             <!-- <q-icon name="update" size="40px"/> -->
 
-          <q-btn flat  to="/" size="lg"  id="cloud" >
+          <q-btn flat  to="/" size="sm"  id="cloud" >
             <img src="~/assets/A(60).png"
             v-if="isLogin">出缺勤管理系統雲 </q-btn>
         </q-toolbar-title>

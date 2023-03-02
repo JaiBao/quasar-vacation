@@ -1,91 +1,91 @@
 <template>
 
-<div class="q-pa-md text-right">
-    <q-table class="table"
-      title="會員管理"
-      :rows="rows"
-      :columns="columns"
-      row-key="id"
-      selection="single"
-      v-model:selected="selected"
-       :filter="filter"
-    >
-     <template v-slot:top-right>
-              <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
-                <template v-slot:append>
-                  <q-icon name="search" />
-                </template>
-              </q-input>
-            </template>
-    <template v-slot:body-cell-image="props">
-        <q-td :props="props">
-          <q-avatar>
-<q-img :src="`https://source.boringavatars.com/beam/${props.row.name}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`"/></q-avatar>
-        </q-td>
-      </template>
-    </q-table>
-    <q-btn
-    v-if="selected[0]"
-  icon="edit_note"
-   color="info"
-   label="編輯"
-   @click="UserEdit=true"
-                />
-    <q-btn
-    v-if="selected[0]"
-    icon="delete"
-    color="red"
-    label="刪除"
-    @click="delete1"></q-btn>
-  </div>
-  <!-- -------------------------------- -->
-  <q-dialog v-model="UserEdit" persistent >
-    <q-card style="width: 400px">
-      <q-card-section>
-        <div class="text-h6">會員id</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none">
-        <q-input outline  v-model="selected[0].id" readonly />
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6">姓名</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none">
-        <q-input outline type="text" v-model="selected[0].name" />
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6">帳號</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none">
-        <q-input outline type="text" v-model="selected[0].account" />
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6">密碼</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none">
-        <q-input outline type="password" v-model="selected[0].password" />
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6">手機</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none">
-        <q-input outline type="text" v-model="selected[0].phone" />
-      </q-card-section>
-      <q-card-section>
-        <div class="text-h6">角色:管理員:1 使用者:0</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none">
-        <q-input outline type="text" v-model="selected[0].role" />
-      </q-card-section>
+  <div class="q-pa-md text-right">
+      <q-table class="table"
+        title="會員管理"
+        :rows="rows"
+        :columns="columns"
+        row-key="id"
+        selection="single"
+        v-model:selected="selected"
+         :filter="filter"
+      >
+       <template v-slot:top-right>
+                <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+                  <template v-slot:append>
+                    <q-icon name="search" />
+                  </template>
+                </q-input>
+              </template>
+      <template v-slot:body-cell-image="props">
+          <q-td :props="props">
+            <q-avatar>
+  <q-img :src="`https://source.boringavatars.com/beam/${props.row.name}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`"/></q-avatar>
+          </q-td>
+        </template>
+      </q-table>
+      <q-btn
+      v-if="selected[0]"
+    icon="edit_note"
+     color="info"
+     label="編輯"
+     @click="UserEdit=true"
+                  />
+      <q-btn
+      v-if="selected[0]"
+      icon="delete"
+      color="red"
+      label="刪除"
+      @click="delete1"></q-btn>
+    </div>
+    <!-- -------------------------------- -->
+    <q-dialog v-model="UserEdit" persistent >
+      <q-card style="width: 400px">
+        <q-card-section>
+          <div class="text-h6">會員id</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <q-input outline  v-model="selected[0].id" readonly />
+        </q-card-section>
+        <q-card-section>
+          <div class="text-h6">姓名</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <q-input outline type="text" v-model="selected[0].name" />
+        </q-card-section>
+        <q-card-section>
+          <div class="text-h6">帳號</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <q-input outline type="text" v-model="selected[0].account" />
+        </q-card-section>
+        <q-card-section>
+          <div class="text-h6">密碼</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <q-input outline type="password" v-model="selected[0].password" />
+        </q-card-section>
+        <q-card-section>
+          <div class="text-h6">手機</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <q-input outline type="text" v-model="selected[0].phone" />
+        </q-card-section>
+        <q-card-section>
+          <div class="text-h6">角色:管理員:1 使用者:0</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <q-input outline type="text" v-model="selected[0].role" />
+        </q-card-section>
 
-      <q-card-actions align="right" class="text-primary">
-        <q-btn flat label="取消" v-close-popup />
-        <q-btn flat label="更改" v-close-popup @click="edit" />
-      </q-card-actions>
-    </q-card>
-  </q-dialog>
-      <!-- ------------------------ -->
-</template>
+        <q-card-actions align="right" class="text-primary">
+          <q-btn flat label="取消" v-close-popup />
+          <q-btn flat label="更改" v-close-popup @click="edit" />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+        <!-- ------------------------ -->
+  </template>
 
 <script setup>
 import { reactive, ref } from 'vue'
@@ -119,7 +119,7 @@ const columns = [
     name: 'account',
     align: 'left',
     label: '帳號',
-     field: 'account',
+    field: 'account',
     sortable: true
   },
   {
@@ -187,35 +187,35 @@ const edit = async () => {
 }
 
 </script>
-<style lang="scss">
+  <style lang="scss">
 
-.container {
-  height: 450px;
-}
-
-.table-container {
-  height: 100%;
-}
-.table{
-width: 75%;
-height: 300PX;
-margin: auto;
-margin-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .table{
-    width: 100%;
-    margin-left: 0;
+  .container {
+    height: 450px;
   }
 
-}
-@media screen and (max-width: 992px) {
-  .table{
-    width: 100%;
-    margin-left: 0;
+  .table-container {
     height: 100%;
   }
+  .table{
+  width: 75%;
+  height: 300PX;
+  margin: auto;
+  margin-top: 20px;
+  }
 
-}
-</style>
+  @media screen and (max-width: 768px) {
+    .table{
+      width: 100%;
+      margin-left: 0;
+    }
+
+  }
+  @media screen and (max-width: 992px) {
+    .table{
+      width: 100%;
+      margin-left: 0;
+      height: 100%;
+    }
+
+  }
+  </style>
