@@ -8,7 +8,15 @@
       row-key="id"
       selection="single"
       v-model:selected="selected"
+       :filter="filter"
     >
+     <template v-slot:top-right>
+              <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+                <template v-slot:append>
+                  <q-icon name="search" />
+                </template>
+              </q-input>
+            </template>
     <template v-slot:body-cell-image="props">
         <q-td :props="props">
           <q-avatar>
@@ -89,6 +97,7 @@ const $q = useQuasar()
 // const user = useUserStore()
 const selected = ref([])
 const UserEdit = ref(false)
+const filter = ref('')
 
 const columns = [
   {
@@ -109,8 +118,8 @@ const columns = [
   {
     name: 'account',
     align: 'left',
-    label: '姓名',
-    field: 'account',
+    label: '帳號',
+     field: 'account',
     sortable: true
   },
   {

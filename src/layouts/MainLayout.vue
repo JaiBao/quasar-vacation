@@ -261,8 +261,8 @@ const logout = async () => {
 #cloud{
   font-size: 30px !important;
 img{
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
 }
 
 }

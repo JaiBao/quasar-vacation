@@ -9,7 +9,9 @@
     >
     <!-- <h1 class="text-white">Basic</h1> -->
     <!-- <img src="~/assets/A(60).png" style="width: 150px; height: 150px" > -->
-          <div class="text-h3 text-white text-center">Wish you a happy holiday！</div>
+          <div class="text-h3 text-white text-center"
+               data-aos="fade-up"
+              data-aos-duration="3000">Wish you a Happy Holiday！</div>
 
   </q-parallax>
 </div>
@@ -60,9 +62,12 @@
 </div>
 
     <div id="info" class="row q-mb-md text-center justify-center items-center">
-      <div class="col-md-3 col-xs-12 ">
+      <div class="col-md-3 col-xs-12 " >
         <q-card class="my-card" flat bordered>
-          <q-card-section>
+          <q-card-section
+          data-aos="flip-left"
+          data-aos-duration="2000"
+          >
             <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
         <q-img ratio="1" class="col-5" src="~/assets/勞保.jpg" />
       </a>
@@ -76,7 +81,9 @@
       </div>
       <div class="col-md-3 col-xs-12 ">
         <q-card class="my-card" flat bordered>
-          <q-card-section>
+          <q-card-section
+          data-aos="flip-right"
+          data-aos-duration="3000">
             <a href="https://labweb.mol.gov.tw/monthly/index.html#disasterSet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidaySet=false%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse%2Cfalse&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&holidayWorkhours=0&monthlyPay=36000&regularDayOffWorkReason=disaster&restDayOffWorkReason=restLaborAgree&specialDayOffWorkReason=specialLaborAgree&workhours=8%2C8%2C8%2C8%2C8%2C0%2C0">
         <q-img ratio="1" class="col-5" src="~/assets/加班費.jpg" />
       </a>
@@ -91,7 +98,9 @@
       </div>
       <div class="col-md-3 col-xs-12 ">
         <q-card class="my-card" flat bordered>
-          <q-card-section>
+          <q-card-section
+          data-aos="flip-left"
+          data-aos-duration="3000">
             <a href="https://www.mol.gov.tw/1607/28162/28166/28218/nodelist">
         <q-img ratio="1" class="col-5" src="~/assets/規定.jpg" />
       </a>
@@ -105,7 +114,9 @@
       </div>
       <div class="col-md-3 col-xs-12">
   <q-card class="my-card" flat bordered>
-    <q-card-section>
+    <q-card-section
+    data-aos="flip-right"
+          data-aos-duration="3000">
       <a href="https://ilabor.ntpc.gov.tw/page/reporting-on-implementation-of-unpaid-leave">
         <q-img ratio="1" class="col-5" src="~/assets/勞保.png" />
       </a>
@@ -130,6 +141,9 @@ import {
   Loading,
   QSpinnerIos
 } from 'quasar'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+AOS.init()
 
 const slide = ref(1)
 const $q = useQuasar()
