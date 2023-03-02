@@ -121,7 +121,7 @@ v-if="isAdmin"
   v-ripple
   :active="link === 'trash'"
   @click="link = 'trash'"
-  to="/admin/limit"
+  to="/admin/review"
   active-class="my-menu-link"
 >
   <q-item-section avatar>
