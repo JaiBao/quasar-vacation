@@ -1,6 +1,11 @@
 # Quasar App (quasar-project)
+差勤休請假系統
+管理員
+帳號admin 密碼 1234
+會員註冊可試用
+可匯出E
 
-A Quasar Project
+
 
 ## Install the dependencies
 ```bash
